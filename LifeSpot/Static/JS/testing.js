@@ -1,2 +1,2 @@
-let name = prompt("Введите имя:");
-alert(`Приветствуем ${name}. В вашем имени ${name.length} символов, а то вы и не знали...`);
+let elements = document.getElementsByTagName('*');
+alert(`Количество элементов на странице ${elements.length}`)
