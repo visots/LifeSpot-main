@@ -11,7 +11,7 @@
     <h1>LifeSpot - прямые трансляции с улиц</h1>
     <p>Покажем, что происходит прямо сейчас</p>
 </header>
-<content class="bordered">
+<main class="bordered">
     <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs?si=bsLIB8FxY57y1bx8"
                 title="YouTube video player" frameborder="0"
@@ -33,14 +33,25 @@
                 allowfullscreen></iframe>
         <h3 class="video-title">Лондон, автобусный маршрут</h3>
     </div>
-</content>
+</main>
 <aside id="sidebar">
     <div class="navbar">
         <a href="/"><p>Все трансляции</p></a>
         <a href="/"><p>О проекте</p></a>
     </div>
     <div class="search-input">
-        <input name="search-video" type="text" placeholder="Поиск по видео">
+        <input name="search-video" type="text" placeholder="Поиск по видео" size=50%
+               oninput="let value = document.getElementsByTagName('input')[0].value.toLowerCase();
+               let videoElements = document.getElementsByClassName('video-container');
+               for(let i = 0; i<= videoElements.length; i++)
+               {
+                  let description = videoElements[i].  getElementsByTagName('h3')[0].innerText.toLowerCase();
+                     if(!description.includes(value))
+                        videoElements[i].style.display ='none';           
+                     else
+                         videoElements[i].style.display ='inline-block';
+               }
+">
     </div>
 </aside>
 <footer>
