@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css"/>
     <script src="../Static/JS/index.js"></script>
+    <script>
+       // let session = handleSessionStart();
+       // sessionLog(session);
+    </script>
     <title>LifeSpot</title>
 </head>
 <body>
@@ -41,17 +45,10 @@
     </div>
     <div class="search-input">
         <input name="search-video" type="text" placeholder="Поиск по видео" size=50%
-               oninput="let value = document.getElementsByTagName('input')[0].value.toLowerCase();
-               let videoElements = document.getElementsByClassName('video-container');
-               for(let i = 0; i<= videoElements.length; i++)
-               {
-                  let description = videoElements[i].  getElementsByTagName('h3')[0].innerText.toLowerCase();
-                     if(!description.includes(value))
-                        videoElements[i].style.display ='none';           
-                     else
-                         videoElements[i].style.display ='inline-block';
-               }
-">
+               oninput="
+               const inputParseFunc = function (){return document.getElementsByTagName('input')[0].value.toLowerCase()};
+               filterContent(inputParseFunc)
+        ">
     </div>
 </aside>
 <footer>
