@@ -8,6 +8,16 @@
         checkAge();
         handleSession();
         sessionLog();
+
+        setTimeout(() =>
+                alert("Нравится LifeSpot? " + '\n' +  "Подпишитесь на наш Instagram @lifespot999!" ),
+            30000);
+        
+    </script>
+    <script>
+        const inputParseFunction = function(){
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
     </script>
     <title>LifeSpot</title>
 </head>
@@ -46,10 +56,7 @@
     </div>
     <div class="search-input">
         <input name="search-video" type="text" placeholder="Поиск по видео" size=50%
-               oninput="
-               const inputParseFunc = function (){return document.getElementsByTagName('input')[0].value.toLowerCase()};
-               filterContent(inputParseFunc)
-        ">
+               oninput="filterContent()">
     </div>
 </aside>
 <footer>
